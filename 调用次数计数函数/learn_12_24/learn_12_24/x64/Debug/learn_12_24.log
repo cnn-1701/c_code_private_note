@@ -1,0 +1,2 @@
+﻿  test.c
+C:\c_code_learn\调用次数计数函数\learn_12_24\test.c(15,15): error C2197: “int getchar(void)”: 用于调用的参数太多

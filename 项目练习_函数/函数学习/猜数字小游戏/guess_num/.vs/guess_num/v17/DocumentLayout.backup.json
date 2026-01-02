@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u731C\u6570\u5B57\u5C0F\u6E38\u620F\\guess_num\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E276ABF-AE04-4EFE-BAAE-06173CA74BB5}|guess_num.vcxproj|C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u731C\u6570\u5B57\u5C0F\u6E38\u620F\\guess_num\\test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{3E276ABF-AE04-4EFE-BAAE-06173CA74BB5}|guess_num.vcxproj|solutionrelative:test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "test.c",
+              "DocumentMoniker": "C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u731C\u6570\u5B57\u5C0F\u6E38\u620F\\guess_num\\test.c",
+              "RelativeDocumentMoniker": "test.c",
+              "ToolTip": "C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u731C\u6570\u5B57\u5C0F\u6E38\u620F\\guess_num\\test.c",
+              "RelativeToolTip": "test.c",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-12-23T16:53:10.789Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

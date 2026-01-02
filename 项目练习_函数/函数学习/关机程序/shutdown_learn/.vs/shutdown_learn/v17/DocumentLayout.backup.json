@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u5173\u673A\u7A0B\u5E8F\\shutdown_learn\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7A505E97-21D6-4023-93D5-763B560E96A4}|shutdown_learn.vcxproj|C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u5173\u673A\u7A0B\u5E8F\\shutdown_learn\\shutdown_test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7A505E97-21D6-4023-93D5-763B560E96A4}|shutdown_learn.vcxproj|solutionrelative:shutdown_test.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "shutdown_test.c",
+              "DocumentMoniker": "C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u5173\u673A\u7A0B\u5E8F\\shutdown_learn\\shutdown_test.c",
+              "RelativeDocumentMoniker": "shutdown_test.c",
+              "ToolTip": "C:\\Users\\Misono Mika\\OneDrive\\C\u8BED\u8A00\u5B66\u4E60\\\u51FD\u6570\u5B66\u4E60\\\u5173\u673A\u7A0B\u5E8F\\shutdown_learn\\shutdown_test.c",
+              "RelativeToolTip": "shutdown_test.c",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-12-23T18:16:14.648Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

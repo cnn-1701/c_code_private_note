@@ -1,3 +1,0 @@
-﻿  learn.c
-C:\c_code_learn\test\learn.c(48,2): warning C4550: 表达式计算为缺少参数列表的函数
-  test.vcxproj -> C:\c_code_learn\test\x64\Debug\test.exe

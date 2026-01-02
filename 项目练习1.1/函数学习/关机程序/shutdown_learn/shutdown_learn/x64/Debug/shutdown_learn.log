@@ -1,3 +1,0 @@
-﻿  shutdown_test.c
-C:\Users\Misono Mika\OneDrive\C语言学习\函数学习\关机程序\shutdown_learn\shutdown_test.c(17,2): warning C4013: “system”未定义；假设外部返回 int
-  shutdown_learn.vcxproj -> C:\Users\Misono Mika\OneDrive\C语言学习\函数学习\关机程序\shutdown_learn\x64\Debug\shutdown_learn.exe

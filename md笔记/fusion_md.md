@@ -404,6 +404,7 @@ int main()
   将前`n-1`个圆盘从A柱`scr`移动到B柱`tmp`
   将第n个圆盘移动到C柱`target`
   将前`n-1`个圆盘从B`tmp`移动到C柱`tgt`
+
 - 我们通过定义move函数来实现柱子的移动
   move函数应当接受三个参量，即将要移动的盘子数目`n`，源柱`scr`，间柱`tmp`与靶柱`tgt`
   再次分析，我们会将`n-1`个柱子由`scr`柱移动到`tmp`柱
@@ -462,7 +463,7 @@ C:\Users\Misono Mika\OneDrive\C语言学习\汉诺塔问题\Project1\x64\Debug\P
 
 可见我们通过简单的递归调用轻松实现了汉诺塔问题的步骤分析与计数
 
-常见的判断题：
+常见的递归相关题：
 - `if`语句中`0`表示假，==非零==表示真而不是`1`表示真
   
 - `else`语句总是与==最近的==`if`进行匹配而不是与对齐的`if`进行匹配
@@ -486,6 +487,11 @@ C:\Users\Misono Mika\OneDrive\C语言学习\汉诺塔问题\Project1\x64\Debug\P
 - 复合语句内定义的变量只在打括号内有效
 
 - [函数栈相关知识](https://www.bilibili.com/video/BV1By4y1x7Yh/?spm_id_from=333.337.search-card.all.click&vd_source=d43d37dc4055f11d65e38cc11ce56540)
+
+- 求字符型数组长度时要减去`\0`
+  
+  不管是使用`sizeof` 还是 `strlen` 都要减去 `\0`
+
 
 - 
   eg：
@@ -538,6 +544,7 @@ int main()
 
 	其中比较大小部分我们还可以用`三目运算符`来实现对`min`与`max`的定位
 ***
+> 使用递归完成数组元素倒置
 
 
 

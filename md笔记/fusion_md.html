@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\surface\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\Misono Mika\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
       
       
       
@@ -25,6 +25,7 @@
       <div class="crossnote markdown-preview  ">
       
 <h1 id="c_cod-learn">C_cod Learn </h1>
+<h2 id="函数">函数 </h2>
 <p>#define _CRT_SECURE_NO_WARNINGS<br>
 #include&lt;stdio.h&gt;</p>
 <p>void swap(int x, int y)<br>
@@ -225,15 +226,21 @@ return 0;<br>
 <h4 id="内存结构">内存结构： </h4>
 <ul>
 <li>
-<p>栈区：存放函数的形参，局部变量，函数返回值</p>
+<p>栈区：存放函数的<code>形参</code>，<code>局部变量</code>，<code>函数返回值</code></p>
 <p><code>每一次函数的调用都会在栈上申请空间，栈区空间有限</code><br>
 <a href="https://www.bilibili.com/video/BV1Pz4y1F7bU?vd_source=e28628411d73a1e10bdcfb1410cbccf8">函数栈帧的创建与销毁</a></p>
 </li>
 <li>
-<p>堆区</p>
+<p>堆区：<code>存放动态内存分配</code></p>
+<ul>
+<li>malloc</li>
+<li>free</li>
+<li>calloc</li>
+<li>realloc</li>
+</ul>
 </li>
 <li>
-<p>静态区</p>
+<p>静态区：<code>静态内存变量</code>，<code>全局变量</code></p>
 </li>
 </ul>
 <h3 id="如何定义打印一个无符号整形">如何定义打印一个无符号整形： </h3>
@@ -433,15 +440,19 @@ return c;<br>
 <h3 id="汉诺塔问题httpswwwbilibilicomvideobv1sp4y137e9vd_sourcee28628411d73a1e10bdcfb1410cbccf8"><a href="https://www.bilibili.com/video/BV1SP4y137E9?vd_source=e28628411d73a1e10bdcfb1410cbccf8">汉诺塔问题</a> </h3>
 <p>问题分析：</p>
 <ul>
-<li>要将<code>n</code>个圆盘从A柱<code>scr</code>移动到C柱子<code>tgt</code>的过程为：<br>
+<li>
+<p>要将<code>n</code>个圆盘从A柱<code>scr</code>移动到C柱子<code>tgt</code>的过程为：<br>
 将前<code>n-1</code>个圆盘从A柱<code>scr</code>移动到B柱<code>tmp</code><br>
 将第n个圆盘移动到C柱<code>target</code><br>
-将前<code>n-1</code>个圆盘从B<code>tmp</code>移动到C柱<code>tgt</code></li>
-<li>我们通过定义move函数来实现柱子的移动<br>
+将前<code>n-1</code>个圆盘从B<code>tmp</code>移动到C柱<code>tgt</code></p>
+</li>
+<li>
+<p>我们通过定义move函数来实现柱子的移动<br>
 move函数应当接受三个参量，即将要移动的盘子数目<code>n</code>，源柱<code>scr</code>，间柱<code>tmp</code>与靶柱<code>tgt</code><br>
 再次分析，我们会将<code>n-1</code>个柱子由<code>scr</code>柱移动到<code>tmp</code>柱<br>
 使第n柱移动到<code>tgt</code>柱后<br>
-再将<code>n-1</code>从<code>tmp</code>柱移动到<code>tgt</code>柱，构成递归</li>
+再将<code>n-1</code>从<code>tmp</code>柱移动到<code>tgt</code>柱，构成递归</p>
+</li>
 </ul>
 <blockquote>
 <p>#define _CRT_SECURE_NO_WARNINGS<br>
@@ -497,7 +508,7 @@ C:\Users\Misono Mika\OneDrive\C语言学习\汉诺塔问题\Project1\x64\Debug\P
 按任意键关闭此窗口. . .</p>
 </blockquote>
 <p>可见我们通过简单的递归调用轻松实现了汉诺塔问题的步骤分析与计数</p>
-<p>常见的判断题：</p>
+<p>常见的递归相关题：</p>
 <ul>
 <li>
 <p><code>if</code>语句中<code>0</code>表示假，<mark>非零</mark>表示真而不是<code>1</code>表示真</p>
@@ -513,8 +524,33 @@ C:\Users\Misono Mika\OneDrive\C语言学习\汉诺塔问题\Project1\x64\Debug\P
 <p>char也是整形家族的，因为字符存储时以<code>ascii</code>码进行存储，因此char类型也可在case语句表达式中</p>
 </li>
 <li>
-<p><code>switch</code>语句的结果判断/选择题一定要看是否有<code>break</code>，否则程序的顺序执行无法被打断，最后输出最后一段语句的值<br>
-eg：</p>
+<p><code>switch</code>语句的结果判断/选择题一定要看是否有<code>break</code>，否则程序的顺序执行无法被打断，最后输出最后一段语句的值</p>
+</li>
+<li>
+<p>函数的设计应当遵循<a href="https://baike.baidu.com/item/%E9%AB%98%E5%86%85%E8%81%9A%E4%BD%8E%E8%80%A6%E5%90%88/5227009">高内聚低耦合</a></p>
+</li>
+<li>
+<p>尽量做到谁申请的资源由谁来释放<code>动态内存管理</code></p>
+</li>
+<li>
+<p>在不同的函数中可以使用<code>同名变量</code></p>
+</li>
+<li>
+<p>函数的形参保存在栈上</p>
+</li>
+<li>
+<p>复合语句内定义的变量只在打括号内有效</p>
+</li>
+<li>
+<p><a href="https://www.bilibili.com/video/BV1By4y1x7Yh/?spm_id_from=333.337.search-card.all.click&amp;vd_source=d43d37dc4055f11d65e38cc11ce56540">函数栈相关知识</a></p>
+</li>
+<li>
+<p>求字符型数组长度时要减去<code>\0</code></p>
+<p>使用<code>sizeof</code>语法求字符串长度时包含了<code>\0</code>需要减去</p>
+<p>但是使用<code>strlen</code>语法求字符串长度时不包含<code>\0</code>，不需要减去</p>
+</li>
+<li>
+<p>eg：</p>
 <blockquote>
 <p>switch(1)<br>
 {<br>
@@ -570,6 +606,10 @@ return 0;																								<br>
 </li>
 </ul>
 <hr>
+<blockquote>
+<p>eg：<br>
+使用递归完成数组元素倒置</p>
+</blockquote>
 
       </div>
       

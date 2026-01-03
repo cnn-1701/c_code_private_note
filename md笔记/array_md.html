@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\surface\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\Misono Mika\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
       
       
       
@@ -147,6 +147,113 @@ type_t arr_name [const_n]</p>
 </tbody>
 </table>
 <p>上述都为不完全初始化</p>
+<h4 id="元素定位">元素定位： </h4>
+<p>通过行数列来定位，通过双重for循环来遍历打印所有元素</p>
+<ul>
+<li>可以将二维数组视作<code>一维数组</code>的数组，每个元素是<code>一行一维数组</code></li>
+</ul>
+<h4 id="如何访问一行">如何访问一行 </h4>
+<p><code>arr[a] [j]</code></p>
+<h4 id="二维数组的存放方式">二维数组的存放方式 </h4>
+<ul>
+<li>二维数组在内存中依旧连续存放</li>
+</ul>
+<h3 id="数组越界">数组越界： </h3>
+<p>数组的下标是有范围限制的</p>
+<p>数组的下规定是从0开始的,如果数组有n个元素,最后一个元素的下标就是n-1。</p>
+<p>所以数组的下标如果<code>小于0</code>,或者<code>大于n-1</code>,就是<mark>数组越界访问</mark>了,超出了数组合法空间的访问。</p>
+<p>C语言本身是不做数组下标的越界检查,编译器也不一定报错,但是编译器不报错,并不意味着程序就</p>
+<p>是正确的,</p>
+<p>所以程序员写代码时,最好自己做<code>越界的检查</code></p>
+<h3 id="将数组作为参数传递">将数组作为参数传递 </h3>
+<p>直接传递<code>数组名</code>，传递数组地址</p>
+<p>形参类型：</p>
+<ul>
+<li>
+<p>数组接收（伪）：<br>
+<code>int arr[]</code><br>
+这种写法传参并未将整个数组传递，而只是传递了数组的地址</p>
+</li>
+<li>
+<p>指针接收：</p>
+<ul>
+<li>
+<p>更符合数组传递的本质</p>
+</li>
+<li>
+<p><code>int* p</code></p>
+</li>
+</ul>
+<p>后面p始终指向<code>首地址</code></p>
+<p>若要调用<code>arr[i]</code></p>
+<p>等价于<code>*(p + i)</code></p>
+</li>
+</ul>
+<h3 id="数组名">数组名 </h3>
+<ul>
+<li>
+<p>思考：如果数组名是首元素地址，那sizeof(arr)输出为<code>全数组字节数</code>？</p>
+<ul>
+<li>
+<p>数组名确实是<code>首元素地址</code></p>
+</li>
+<li>
+<p>存在两个例外</p>
+<ol>
+<li>
+<p>sizeof()内数组名字为全数组大小(以字节为单位)</p>
+</li>
+<li>
+<p><code>&amp;arr_x</code>数组名表示整个<code>数组</code>而不是元素地址，整个数组从<code>首元素以地址为开始</code></p>
+</li>
+</ol>
+</li>
+<li>
+<p>如何思考<code>首元素地址</code>与<code>数组地址</code>区别</p>
+<p>数组名 + 1 == 跳过整个数组<br>
+首元素 + 1 == 数组的下个元素</p>
+</li>
+<li>
+<p>二位数组的数组名</p>
+<p>二维数组的数组名也表示首元素的地址</p>
+<p>二维数组的首元素是<code>首行</code>而不是<code>[0] [0]元素</code></p>
+</li>
+<li>
+<p>二维数组行数求法</p>
+<p><code>sizeof(arr) / sizeof(arr[0])</code></p>
+</li>
+<li>
+<p>二维数组列数求法</p>
+<p><code>sizeof(arr[0]) / sizeof(arr[0] [0])</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="项目练习">项目练习 </h3>
+<blockquote>
+<p>利用数组实现项目<code>三字棋</code></p>
+</blockquote>
+<blockquote>
+<p>利用数组实现项目<code>扫雷小游戏</code></p>
+</blockquote>
+<h4 id="三字棋">三字棋 </h4>
+<ul>
+<li>
+<p>项目结构：</p>
+<ul>
+<li>
+<p>test.c :游戏逻辑测试</p>
+</li>
+<li>
+<p>test.h :游戏逻辑测试声明</p>
+</li>
+<li>
+<p>game.h:代码声明：</p>
+<p>包含函数声明，符号定义</p>
+</li>
+</ul>
+</li>
+</ul>
 
       </div>
       

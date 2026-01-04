@@ -43,7 +43,7 @@ type_t arr_name [const_n]</p>
 <ul>
 <li>在C99标准前，数组的大小必须是<mark>常量</mark>或<mark>常量表达式</mark></li>
 <li>在C99标准后，数组的大小可以是<mark>变量</mark>，为了支持<mark>变长数组</mark><br>
-对于默认不是C99标准的编译器，使用<code>-std = c99</code>来采用C99标准</li>
+对于默认不是C99标准的编译器，使用<code>/std = c99</code>来采用C99标准</li>
 <li>采用变量定义的数组是不能初始化的</li>
 </ul>
 </li>
@@ -242,6 +242,9 @@ type_t arr_name [const_n]</p>
 <p>项目结构：</p>
 <ul>
 <li>
+<p>基于<code>do...while</code>的模块化设计</p>
+</li>
+<li>
 <p>test.c :游戏逻辑测试</p>
 </li>
 <li>
@@ -254,6 +257,110 @@ type_t arr_name [const_n]</p>
 </ul>
 </li>
 </ul>
+<h4 id="扫雷游戏">扫雷游戏 </h4>
+<ul>
+<li>
+<p>要点：在框中生成周围8个坐标雷的个数</p>
+</li>
+<li>
+<p>当我们找到所有的雷后，游戏结束</p>
+</li>
+</ul>
+<h3 id="逗号表达式">逗号表达式 </h3>
+<ul>
+<li>
+<p>基本特性：</p>
+<p>从左到右依次计算各个表达式</p>
+<p>整个表达式的值是<code>最后一个表达式</code>的值</p>
+<p><code>前 n-1 个表达式的值</code>会被丢弃（但副作用会保留）</p>
+</li>
+<li>
+<p>eg:<br>
+arr[] = {1,2,(3,4),5};<br>
+(3, 4)为一个逗号表达式，最后计算结果为4，只占用一个元素</p>
+</li>
+</ul>
+<h3 id="只读变量">只读变量 </h3>
+<ul>
+<li>
+<p>当我想使用变量来定义数组长度时</p>
+<p>可以尝试使用const确定的<code>只读变量</code></p>
+<ul>
+<li>eg：<br>
+int x = num;<br>
+const int* len = <code>&amp;x</code>;</li>
+</ul>
+<p>或者采用宏定义来确定</p>
+</li>
+</ul>
+<h3 id="数组的类型">数组的类型 </h3>
+<ul>
+<li>
+<p>数组也是有类型的，数组的定义式去掉数组名即为数组的类型</p>
+<p>eg：<br>
+int arr[10] 的类型为 <code>int [10]</code></p>
+<p>同样也可以使用<code>sizeof</code>来求一个类型数组的长度</p>
+</li>
+</ul>
+<h3 id="sizeof与strlen的区别"><code>sizeof</code>与<code>strlen</code>的区别 </h3>
+<ul>
+<li>
+<p><code>sizeof</code>是<mark>操作符</mark>，用来计算变量（或类型所创建的变量）所占内存的大小,</p>
+<p>只关注内存的大小，不关注内存存放的具体内容</p>
+</li>
+<li>
+<p><code>strlen</code>是<mark>库函数</mark>，专门用于求<mark>字符串</mark>的长度，只针对<mark>字符串</mark>，不包含<code>\0</code></p>
+<p>从参数给到的地址一直找<code>\0</code>，统计直到<code>\0</code>前出现的字符的个数</p>
+</li>
+</ul>
+<h3 id="数组的初始化-1">数组的初始化 </h3>
+<ul>
+<li>
+<p>使用<code>init</code>将数组填充为 <code> </code> 或者 <code>0</code> 的过程</p>
+<p>建议在创建空数组时将其初始化</p>
+</li>
+</ul>
+<h4 id="字符与数字互化">字符与数字互化： </h4>
+<ul>
+<li>
+<p>数字<code>0</code>对应的<code>ASCII</code>码值为48</p>
+</li>
+<li>
+<p>在数字转字符时，只需要通过加上0 的<code>ASCII</code>码值或者直接加上字符<code>0</code>即可</p>
+</li>
+</ul>
+<h3 id="变长数组">变长数组 </h3>
+<ul>
+<li>
+<p>在如linux的内置gcc编译器的系统中，支持<code>变长数组</code>，数组的大小为变量</p>
+</li>
+<li>
+<p>变长数组在定义时不能初始化</p>
+</li>
+</ul>
+<blockquote>
+<p>eg:<br>
+int main()<br>
+{<br>
+int n = 0;<br>
+scanf("%d", &amp;n);<br>
+int arr[n];<br>
+// 变长数组定义时不能初始化</p>
+</blockquote>
+<blockquote>
+<p>for (int i = 0; i &lt; n; i++)<br>
+{<br>
+scanf("%d", &amp;arr[i]);<br>
+}</p>
+</blockquote>
+<blockquote>
+<p>for (int i = 0; i &lt; n; i++)<br>
+{<br>
+printf("%d", arr[i]);<br>
+}<br>
+return 0;<br>
+}</p>
+</blockquote>
 
       </div>
       

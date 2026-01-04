@@ -1,28 +1,14 @@
 #include"game.h"
 
-int menu()
-{
-	printf("*************************");
-	printf("***** 1.play 0.exit *****");
-	printf("*************************");
-	int ret = 0;
-	scanf("%d", &ret);
-	if (ret == 0)
-	{
-		return 0;
-	}
-	else if (ret == 1)
-	{
-		return 1;
-	}
-	else
-	{
-		return 2;
-	}
-}
-
 void game()
 {
+	int arr_1[ROWS][COLS];
+	// 地雷储存数组
+	int arr_2[ROWS][COLS];
+	// 交互数组
+
+
+
+
 	return;
-}
- 
+ }

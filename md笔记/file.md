@@ -112,6 +112,20 @@ files
     }
 
     若文件不存在，将会打印错误信息：**Error opening file unexist.ent: No such file or directory**
+    
+    错误信息的打印还可以使用库函数`perror`
+    例：当fopen打开失败时
+    可以尝试使用语句`perror("fopen")`来实现对fopen返回的错误信息（空指针进行打印）
+     - perror函数：C 库函数 void perror(const char *str) 把一个描述性错误消息输出到标准错误 stderr。首先输出字符串 str，后跟一个冒号，然后是一个空格
+
+    > eg:if( fp == NULL ) 
+    {
+      perror("Error: ");
+      return(-1);
+    }
+
+    该语句执行结果为
+    `Error： ：No such file or directory `
 
     - fclose函数：
     
@@ -138,7 +152,90 @@ files
 |二进制输入|fread|文件|
 |二进制输出|fwrite|文件|
 
-> 
+### 格式化输入/输出stdio
+> // 写入结构体类型数据
+> #define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+> struct S
+{
+	char arr[11];
+	int age;
+	float score;
+};
+
+> int main()
+{
+    struct S s = { "zhangsan", 25, 50.5f };
+    FILE* pf = fopen("test.txt", "w");
+    if (pf == NULL)
+    {
+    perror("fopen");
+    return 1;
+    }
+    // 现在需要以格式化写入数据
+    fprintf(pf,"%s %d %f", s.arr, s.age, s.score);
+    fclose(pf);
+    pf = NULL;
+    return 0;
+}
+
+- 在实例中，我们使用fprintf来进行格式化写入结构体类型数据，
+
+- fprintf语法为`(FILE* stream， const char * format...)`
+  即文件类型指针 + 格式化输入内容
+
+- 编译运行后，发现根目录下的test.txt文本文件被写入了zhangsan 25 50.500000
+
+- fscanf语法为`fscanf(FILE* stream, const char * format)`
+  >fscanf(pf, "%s %d %f", &s.arr, &s.age, &s.score)
+
+- 注：此时使用fopen时需要使用`fopen("D:\\Desktop\\Project1\\test.txt","r")`, 中，打开模式为` r `只读
+
+- 此过程将test.txt文件中数据从硬盘中读取到内存中
+
+- 对`fprintf`与`fscanf`可以理解为与外部设备（硬盘、屏幕、网络等等的交互）
+
+- 为了防止编程时外部设备管理混乱，在写入外部设备前程序会将数据过度到中间`流`中，再写入外部设备，降低了编写压力
+
+我们在打开文件时返回FILE*指针的过程可理解为**打开一个文件流**
+
+**任何c程序，只要运行起来就会默认打开三个流**：
+
+1. FILE* stdin  - 标准输入流(键盘)
+2. FILE* stdout - 标准输出流(屏幕)
+3. FILE* stderr - 标准错误流(屏幕)
+
+ 比如说使用fprintf()将数据打印到屏幕上时，地址指针栏可以写为stdout，使其打印到屏幕上,`std`含义为`标准化`
+ **fprinf(stdout, "") == printf("")**
+
+### 二进制输入/输出
+fread,fwrite
+
+- 只能针对文件流
+
+- 为二进制输入输出模式
+
+打开文件`fopen`时需要以二进制形式打开`wb`
+
+- `fwrite`的语法为
+> size_t fwrite(const void* ptr, size_t size, size_t const, FILE * stream)
+
+> 解释：ptr指向目标函数地址，size_t size使用sizeof函数求结构体大小，size_t const为依此写入流次数，pf为指针
+>例：fwrite ( &s, sizeof(struct S), 1, pf)
+
+**其中我们在文本中以二进制写入，可能出现乱码，我们可以通过fread来正常读出**
+
+- `fread`的语法为
+
+> size_t fread ( const void* ptr, size_t szie,count, FILE * stream)
+
+>eg:fread ( &s, sizeof (struct S), 1, pf)
+
+- 二进制写入与文本写入区别：
+  1. 二进制文件体积可能会更小
+  2. 文本写入时生成的txt文件可直接阅读，二进制文件可能会出现乱码
+
 
 
 

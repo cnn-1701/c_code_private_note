@@ -1,0 +1,6 @@
+﻿  contact.c
+D:\OneDrive\C语言学习\项目练习_结构体_文件\Project1\contact.c(42,33): warning C4028: 形参 1 与声明不一致
+D:\OneDrive\C语言学习\项目练习_结构体_文件\Project1\contact.c(76,12): warning C4013: “FindByName”未定义；假设外部返回 int
+  test.c
+  正在生成代码...
+  Project1.vcxproj -> D:\OneDrive\C语言学习\项目练习_结构体_文件\Project1\x64\Debug\Project1.exe

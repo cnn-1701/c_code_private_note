@@ -236,6 +236,30 @@ fread,fwrite
   1. 二进制文件体积可能会更小
   2. 文本写入时生成的txt文件可直接阅读，二进制文件可能会出现乱码
 
+对比函数
+- scanf / fscanf / sscanf
+- printf / fprintf / sprintf
+
+**scanf是针对标准输入（键盘）的格式化输入语句**
+**printf是针对标准输出（屏幕）的格式化输出语句**
+
+**fscanf是针对所有输入流的格式化输入语句**
+**fprintf是针对所有输出流的格式化输出语句**
+
+- sscanf语法：从一个字符串buf中转换出格式化的数据存放如struct tmp变量中
+    > sscanf(buf, "%s %d %f"，tmp.arr, &(tmp.age), &(tmp.score))
+    // 此处从内存地址写入数据，要取地址操作，又因为arr为数组元素首地址，无需再取地址操作
+    
+- sprintf语法：把一个格式化语句转换为字符串，把s中格式化数据转化为字符串存放如buf中
+   > char buf[100] = { 0 }
+      sprint(buf, "%s %d %f",s.arr , s.age, s.score)
+      //再使用%s打印char 类型的buf
+      printf("%s", buf)
+
+这俩个函数的应用常用于前端页面的数据处理（序列化与反序列化）
+
+
+      
 
 
 
